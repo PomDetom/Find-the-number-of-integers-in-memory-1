@@ -1,13 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
+/*
 int main()
 {
 	unsigned int num = 0;
 	unsigned int i = 1;
 	int count = 0;
 
-	printf("ÇëÊäÈëÒ»¸öÕûÊı£º");
+	printf("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼š");
 	scanf("%d", &num);
 
 	while (i <= num && i != 0)
@@ -19,7 +20,33 @@ int main()
 		i *= 2;
 	}
 
-	printf("%uÔÚÄÚ´æÖĞÓĞ%d¸ö1¡£\n", num, count);
+	printf("%uåœ¨å†…å­˜ä¸­æœ‰%dä¸ª1ã€‚\n", num, count);
+
+	return 0;
+}
+*/
+
+//å‡çº§ç‰ˆ
+int count_1(int num)
+{
+	int count = 0;
+
+	while (num)
+	{
+		num = num & (num - 1);
+		count++;
+	}
+	return count;
+}
+
+int main()
+{
+	int num = 0;
+
+	printf("è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼š");
+	scanf("%d", &num);
+	int ret = count_1(num);
+	printf("æœ‰%dä¸ª1", ret);
 
 	return 0;
 }
